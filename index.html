@@ -4,102 +4,197 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Internship Experience | Data Management Intern (HSBC)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#0b1220;
-      --card:#111a2e;
-      --text:#e8eefc;
-      --muted:#b7c4e6;
-      --accent:#7aa2ff;
-      --line:rgba(232,238,252,.12);
+      --card:#112e1a;
+      --text:#e8fcee;
+      --muted:#b7e6c4;
+      --accent:#7aff9d;
+      --line:rgba(232,252,238,.16);
+      --pixel:#e8fcee;
+      --shadow:#000000;
+      --pixel-fx:#38f06a;
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1000px 800px at 20% 10%, rgba(122,162,255,.18), transparent 55%),
-                  radial-gradient(900px 700px at 80% 0%, rgba(122,162,255,.10), transparent 50%),
-                  var(--bg);
+      font-family: "Press Start 2P", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background:
+        linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),
+        repeating-linear-gradient(0deg, rgba(232,238,252,.06) 0 1px, transparent 1px 16px),
+        repeating-linear-gradient(90deg, rgba(232,238,252,.06) 0 1px, transparent 1px 16px),
+        radial-gradient(1000px 800px at 20% 10%, rgba(122,162,255,.22), transparent 55%),
+        radial-gradient(900px 700px at 80% 0%, rgba(122,162,255,.14), transparent 55%),
+        var(--bg);
       color:var(--text);
       line-height:1.55;
     }
     a{color:inherit}
-    .wrap{max-width:980px;margin:0 auto;padding:32px 18px 56px}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 16px 56px;position:relative;z-index:1}
     header{
+      position:relative;
+      overflow:hidden;
       display:flex;gap:18px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;
-      border:1px solid var(--line);
-      background: rgba(17,26,46,.72);
-      backdrop-filter: blur(10px);
-      padding:22px 22px;
-      border-radius:18px;
+      border:2px solid var(--pixel);
+      background: rgba(17,26,46,.92);
+      padding:18px 18px;
+      border-radius:0;
+      box-shadow: 6px 6px 0 var(--shadow);
     }
-    .title h1{margin:0 0 6px;font-size:26px;letter-spacing:.2px}
-    .title p{margin:0;color:var(--muted);max-width:58ch}
+    .title h1{margin:0 0 10px;font-size:22px;letter-spacing:.2px;line-height:1.25}
+    .title p{margin:0;color:var(--muted);max-width:58ch;font-size:12px;line-height:1.7}
+    .title .idline{color:var(--text);opacity:.95;font-size:11px;line-height:1.8;max-width:58ch}
+    .title .idline .label{color:var(--accent)}
+    .title .idline .sep{opacity:.65;padding:0 10px}
+    .title .summary{margin-top:10px}
     .meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
     .chip{
       display:inline-flex;align-items:center;gap:8px;
-      border:1px solid var(--line);
-      background:rgba(11,18,32,.35);
+      border:2px solid var(--pixel);
+      background:rgba(11,18,32,.55);
       padding:8px 10px;
-      border-radius:999px;
+      border-radius:0;
       color:var(--muted);
-      font-size:13px;
+      font-size:11px;
       white-space:nowrap;
+      box-shadow: 4px 4px 0 var(--shadow);
     }
+    .chip strong{color:var(--accent);font-weight:inherit}
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:16px}
     .card{
       grid-column: span 12;
-      border:1px solid var(--line);
-      background: rgba(17,26,46,.62);
-      backdrop-filter: blur(10px);
-      border-radius:18px;
-      padding:18px 18px;
+      border:2px solid var(--pixel);
+      background: rgba(17,26,46,.90);
+      border-radius:0;
+      padding:16px 16px;
+      box-shadow: 6px 6px 0 var(--shadow);
     }
-    .card h2{margin:0 0 10px;font-size:16px;letter-spacing:.2px}
-    .card p{margin:0 0 10px;color:var(--muted)}
+    .card h2{margin:0 0 12px;font-size:13px;letter-spacing:.2px;line-height:1.35}
+    .card p{margin:0 0 10px;color:var(--muted);font-size:12px;line-height:1.75}
     .card p:last-child{margin-bottom:0}
-    ul{margin:0;padding-left:18px;color:var(--muted)}
-    li{margin:6px 0}
-    .two{grid-column: span 12;display:grid;grid-template-columns:1fr;gap:14px}
-    .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
-    .kpi .box{
-      border:1px solid var(--line);
-      background:rgba(11,18,32,.30);
-      border-radius:14px;
-      padding:12px 12px;
+    .card li strong,
+    .card p strong{
+      display:inline-block;
+      color:var(--accent);
+      font-weight:inherit;
+      border:2px solid var(--pixel);
+      background:rgba(11,18,32,.55);
+      padding:2px 8px;
+      margin:0 10px 0 0;
+      box-shadow: 2px 2px 0 var(--shadow);
+      line-height:1.6;
+      vertical-align:baseline;
     }
-    .kpi .num{font-size:18px;color:var(--text);margin:0 0 4px}
-    .kpi .lab{font-size:12px;color:var(--muted);margin:0}
+    ul{margin:0;padding-left:18px;color:var(--muted);font-size:12px;line-height:1.75}
+    li{margin:8px 0}
+    .two{grid-column: span 12;display:grid;grid-template-columns:1fr;gap:14px}
+    .kpi{display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:10px;margin-top:10px}
+    .kpi .box{
+      border:2px solid var(--pixel);
+      background:rgba(11,18,32,.45);
+      border-radius:0;
+      padding:12px 12px;
+      box-shadow: 4px 4px 0 var(--shadow);
+      min-width:0;
+    }
+    .kpi .num{font-size:14px;color:var(--text);margin:0 0 6px;line-height:1.35}
+    .kpi .lab{font-size:10px;color:var(--muted);margin:0;line-height:1.7}
     .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
     .tag{
-      font-size:12px;
+      font-size:10px;
       color:var(--muted);
-      border:1px solid var(--line);
-      background:rgba(11,18,32,.25);
+      border:2px solid var(--pixel);
+      background:rgba(11,18,32,.40);
       padding:6px 10px;
-      border-radius:999px;
+      border-radius:0;
+      box-shadow: 3px 3px 0 var(--shadow);
+      text-decoration:none;
     }
+    .tag:focus, .tag:hover{color:var(--text)}
     footer{
       margin-top:18px;
       color:var(--muted);
-      font-size:12px;
+      font-size:10px;
       opacity:.9;
       text-align:center;
+    }
+    .cursor{
+      display:inline-block;
+      width:10px;
+      height:16px;
+      background:var(--accent);
+      margin-left:10px;
+      vertical-align:middle;
+      animation: blink 1.05s steps(1,end) infinite;
+    }
+    @keyframes blink{
+      0%, 48% {opacity:1}
+      49%, 100% {opacity:0}
+    }
+    .pixel-field{position:fixed;inset:0;pointer-events:none;opacity:.85;z-index:0}
+    .pixel-field span{
+      position:absolute;
+      width:10px;height:10px;
+      background:var(--pixel-fx);
+      box-shadow: 2px 2px 0 var(--shadow);
+      image-rendering: pixelated;
+      animation: floaty 6.5s linear infinite;
+      opacity:.9;
+    }
+    @keyframes floaty{
+      0%{transform:translateY(0)}
+      50%{transform:translateY(-10px)}
+      100%{transform:translateY(0)}
+    }
+    @media (prefers-reduced-motion: reduce){
+      .cursor, .pixel-field span{animation:none !important}
     }
     @media (min-width: 860px){
       .card.span7{grid-column: span 7;}
       .card.span5{grid-column: span 5;}
       .two{grid-column: span 12;grid-template-columns: 1fr 1fr;}
-      .title h1{font-size:30px}
+      .title h1{font-size:24px}
     }
   </style>
 </head>
 <body>
+  <div class="pixel-field" aria-hidden="true">
+    <span style="left:4%;top:8%;width:8px;height:8px;opacity:.55;animation-duration:7.4s;animation-delay:-1.2s"></span>
+    <span style="left:12%;top:26%;width:10px;height:10px;opacity:.75;animation-duration:6.6s;animation-delay:-2.8s"></span>
+    <span style="left:18%;top:72%;width:12px;height:12px;opacity:.55;animation-duration:8.2s;animation-delay:-4.1s"></span>
+    <span style="left:23%;top:12%;width:10px;height:10px;opacity:.65;animation-duration:7.0s;animation-delay:-3.4s"></span>
+    <span style="left:29%;top:48%;width:8px;height:8px;opacity:.6;animation-duration:6.2s;animation-delay:-1.9s"></span>
+    <span style="left:34%;top:84%;width:10px;height:10px;opacity:.5;animation-duration:8.6s;animation-delay:-5.2s"></span>
+    <span style="left:38%;top:18%;width:12px;height:12px;opacity:.7;animation-duration:6.9s;animation-delay:-2.3s"></span>
+    <span style="left:41%;top:62%;width:10px;height:10px;opacity:.55;animation-duration:7.8s;animation-delay:-4.6s"></span>
+    <span style="left:46%;top:34%;width:8px;height:8px;opacity:.6;animation-duration:6.4s;animation-delay:-3.1s"></span>
+    <span style="left:52%;top:6%;width:10px;height:10px;opacity:.55;animation-duration:8.0s;animation-delay:-2.0s"></span>
+    <span style="left:56%;top:44%;width:12px;height:12px;opacity:.7;animation-duration:6.1s;animation-delay:-1.6s"></span>
+    <span style="left:60%;top:78%;width:10px;height:10px;opacity:.5;animation-duration:8.8s;animation-delay:-5.7s"></span>
+    <span style="left:64%;top:22%;width:8px;height:8px;opacity:.65;animation-duration:7.2s;animation-delay:-3.8s"></span>
+    <span style="left:69%;top:56%;width:10px;height:10px;opacity:.6;animation-duration:6.7s;animation-delay:-4.0s"></span>
+    <span style="left:73%;top:14%;width:12px;height:12px;opacity:.55;animation-duration:8.3s;animation-delay:-2.7s"></span>
+    <span style="left:76%;top:90%;width:10px;height:10px;opacity:.5;animation-duration:9.1s;animation-delay:-6.2s"></span>
+    <span style="left:80%;top:40%;width:8px;height:8px;opacity:.6;animation-duration:6.3s;animation-delay:-1.1s"></span>
+    <span style="left:84%;top:66%;width:10px;height:10px;opacity:.65;animation-duration:7.7s;animation-delay:-4.9s"></span>
+    <span style="left:88%;top:10%;width:12px;height:12px;opacity:.55;animation-duration:8.1s;animation-delay:-3.2s"></span>
+    <span style="left:92%;top:32%;width:10px;height:10px;opacity:.6;animation-duration:6.8s;animation-delay:-2.4s"></span>
+    <span style="left:95%;top:74%;width:8px;height:8px;opacity:.55;animation-duration:8.7s;animation-delay:-5.4s"></span>
+    <span style="left:7%;top:92%;width:10px;height:10px;opacity:.5;animation-duration:9.0s;animation-delay:-6.0s"></span>
+    <span style="left:49%;top:92%;width:8px;height:8px;opacity:.55;animation-duration:8.9s;animation-delay:-5.8s"></span>
+    <span style="left:90%;top:92%;width:10px;height:10px;opacity:.5;animation-duration:9.2s;animation-delay:-6.4s"></span>
+  </div>
   <div class="wrap">
     <header>
       <div class="title">
-        <h1>Internship Portfolio — Data Management Intern</h1>
-        <p>
+        <h1>Internship Portfolio — Data Management Intern<span class="cursor" aria-hidden="true"></span></h1>
+        <p class="idline"><span class="label">Name</span>: Wong Hei Hung, Henry <span class="sep">|</span> <span class="label">SID</span>: 20951061</p>
+        <p class="summary">
           Student Intern, Data Management Team (Pension Admin, Digital Banking Services), HSBC.
           Focus areas: MI reporting, SQL data extraction, data quality checks, and automation.
         </p>
@@ -111,24 +206,6 @@
       </div>
     </header>
 
-    <section class="grid" aria-label="navigation">
-      <div class="card">
-        <h2>Walkthrough Navigation (for Video)</h2>
-        <p>
-          Use this as a guided flow while recording: start from the overview, then projects and impact, then photo journey,
-          and finish with reflection. (Single-page; jump links below.)
-        </p>
-        <div class="tagrow" role="navigation" aria-label="page links">
-          <a class="tag" href="#overview">Overview</a>
-          <a class="tag" href="#timeline">Timeline</a>
-          <a class="tag" href="#projects">Key Projects</a>
-          <a class="tag" href="#impact">Impact</a>
-          <a class="tag" href="#tools">Tools & Data</a>
-          <a class="tag" href="#photos">Photo Journey</a>
-          <a class="tag" href="#reflection">Reflection</a>
-        </div>
-      </div>
-    </section>
 
     <section class="grid">
       <div id="overview" class="card span7">
@@ -224,25 +301,8 @@
         </div>
       </div>
 
-
-      <div id="reflection" class="card">
-        <h2>Detailed Reflection (Talking Points)</h2>
-        <p>
-          This section is intentionally longer so you can use it as your speaking outline for an 8–10 minute presentation.
-          Keep examples general and avoid sharing confidential information.
-        </p>
-        <ul>
-          <li><strong>What changed from school to workplace:</strong> requirements can be incomplete or evolving, so confirmation and iteration become essential.</li>
-          <li><strong>How I approached unclear requirements:</strong> asked clarifying questions, summarized assumptions back to stakeholders, and validated early outputs.</li>
-          <li><strong>How I handled urgent work:</strong> re-prioritized quickly; worked in parallel while waiting for queries/programs to run.</li>
-          <li><strong>Quality mindset:</strong> applied completeness checks, sanity validation, cleansing follow-ups, and peer review to reduce downstream risk.</li>
-          <li><strong>Professional growth:</strong> improved communication, prioritization, and confidence in delivering consistent BAU outputs.</li>
-          <li><strong>What I would do next:</strong> deepen visualization skills (e.g., Power BI/Tableau if available) and continue improving automation and documentation.</li>
-        </ul>
-      </div>
-
       <div class="card">
-        <h2>About Me (Quick Summary)</h2>
+        <h2>Quick Summary</h2>
         <p>
           I enjoy turning complex business questions into actionable data outputs. During the internship, I strengthened my data management fundamentals
           (quality, completeness, validation) and delivered automation that improved team efficiency.
@@ -250,9 +310,6 @@
       </div>
     </section>
 
-    <footer>
-      Note: This page is a student internship summary and avoids confidential details.
-    </footer>
   </div>
 </body>
 </html>
