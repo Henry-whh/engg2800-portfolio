@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Internship Experience | Data Management Intern (HSBC)</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#111a2e;
+      --text:#e8eefc;
+      --muted:#b7c4e6;
+      --accent:#7aa2ff;
+      --line:rgba(232,238,252,.12);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1000px 800px at 20% 10%, rgba(122,162,255,.18), transparent 55%),
+                  radial-gradient(900px 700px at 80% 0%, rgba(122,162,255,.10), transparent 50%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:32px 18px 56px}
+    header{
+      display:flex;gap:18px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;
+      border:1px solid var(--line);
+      background: rgba(17,26,46,.72);
+      backdrop-filter: blur(10px);
+      padding:22px 22px;
+      border-radius:18px;
+    }
+    .title h1{margin:0 0 6px;font-size:26px;letter-spacing:.2px}
+    .title p{margin:0;color:var(--muted);max-width:58ch}
+    .meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;
+      border:1px solid var(--line);
+      background:rgba(11,18,32,.35);
+      padding:8px 10px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:13px;
+      white-space:nowrap;
+    }
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:16px}
+    .card{
+      grid-column: span 12;
+      border:1px solid var(--line);
+      background: rgba(17,26,46,.62);
+      backdrop-filter: blur(10px);
+      border-radius:18px;
+      padding:18px 18px;
+    }
+    .card h2{margin:0 0 10px;font-size:16px;letter-spacing:.2px}
+    .card p{margin:0 0 10px;color:var(--muted)}
+    .card p:last-child{margin-bottom:0}
+    ul{margin:0;padding-left:18px;color:var(--muted)}
+    li{margin:6px 0}
+    .two{grid-column: span 12;display:grid;grid-template-columns:1fr;gap:14px}
+    .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+    .kpi .box{
+      border:1px solid var(--line);
+      background:rgba(11,18,32,.30);
+      border-radius:14px;
+      padding:12px 12px;
+    }
+    .kpi .num{font-size:18px;color:var(--text);margin:0 0 4px}
+    .kpi .lab{font-size:12px;color:var(--muted);margin:0}
+    .tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .tag{
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid var(--line);
+      background:rgba(11,18,32,.25);
+      padding:6px 10px;
+      border-radius:999px;
+    }
+    footer{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:12px;
+      opacity:.9;
+      text-align:center;
+    }
+    @media (min-width: 860px){
+      .card.span7{grid-column: span 7;}
+      .card.span5{grid-column: span 5;}
+      .two{grid-column: span 12;grid-template-columns: 1fr 1fr;}
+      .title h1{font-size:30px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="title">
+        <h1>Internship Portfolio — Data Management Intern</h1>
+        <p>
+          Student Intern, Data Management Team (Pension Admin, Digital Banking Services), HSBC.
+          Focus areas: MI reporting, SQL data extraction, data quality checks, and automation.
+        </p>
+      </div>
+      <div class="meta">
+        <span class="chip"><strong>Period</strong> 2 Jul 2025 – 31 Dec 2025</span>
+        <span class="chip"><strong>Domain</strong> Pension Admin / Digital Banking</span>
+        <span class="chip"><strong>Exposure</strong> Industry-wide program (eMPF)</span>
+      </div>
+    </header>
+
+    <section class="grid" aria-label="navigation">
+      <div class="card">
+        <h2>Walkthrough Navigation (for Video)</h2>
+        <p>
+          Use this as a guided flow while recording: start from the overview, then projects and impact, then photo journey,
+          and finish with reflection. (Single-page; jump links below.)
+        </p>
+        <div class="tagrow" role="navigation" aria-label="page links">
+          <a class="tag" href="#overview">Overview</a>
+          <a class="tag" href="#timeline">Timeline</a>
+          <a class="tag" href="#projects">Key Projects</a>
+          <a class="tag" href="#impact">Impact</a>
+          <a class="tag" href="#tools">Tools & Data</a>
+          <a class="tag" href="#photos">Photo Journey</a>
+          <a class="tag" href="#reflection">Reflection</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div id="overview" class="card span7">
+        <h2>What I Worked On</h2>
+        <ul>
+          <li><strong>SQL data extraction (eMPF requests):</strong> wrote queries for ad-hoc extraction needs and ensured results met request requirements.</li>
+          <li><strong>BAU MI reporting:</strong> produced daily/weekly/monthly MI reports using Excel/PowerPoint for operational monitoring.</li>
+          <li><strong>MI report automation:</strong> built a Python script to streamline weekly MI report generation and reduce manual effort.</li>
+          <li><strong>Team visibility trackers:</strong> created a work-from-home and task-status tracker (JIRA + spreadsheet view) to help the team check status quickly.</li>
+          <li><strong>Data quality & validation:</strong> performed cleansing, completeness checking (production vs backup), table joins, and peer review of teammates’ queries.</li>
+        </ul>
+      </div>
+
+      <div id="impact" class="card span5">
+        <h2>Impact Highlights</h2>
+        <p>Selected outcomes from the internship work.</p>
+        <div class="kpi">
+          <div class="box">
+            <p class="num">&lt; 2 hours</p>
+            <p class="lab">Weekly MI report generation (down from ~0.5 day)</p>
+          </div>
+          <div class="box">
+            <p class="num">Faster status checks</p>
+            <p class="lab">Tracker visualized work status instantly</p>
+          </div>
+          <div class="box">
+            <p class="num">Reduced waiting</p>
+            <p class="lab">Improved turnaround on extraction requests</p>
+          </div>
+        </div>
+        <div class="tagrow" aria-label="skills">
+          <span class="tag">SQL</span>
+          <span class="tag">Excel</span>
+          <span class="tag">PowerPoint</span>
+          <span class="tag">Python</span>
+          <span class="tag">JIRA</span>
+          <span class="tag">Data Quality</span>
+          <span class="tag">MI Reporting</span>
+        </div>
+      </div>
+
+      <div id="timeline" class="card">
+        <h2>Timeline (2 Jul 2025 – 31 Dec 2025)</h2>
+        <p>
+          A high-level view of how my responsibilities grew over time.
+          (Keep descriptions general and avoid confidential details.)
+        </p>
+        <ul>
+          <li><strong>Onboarding & foundations:</strong> learned MI report routines, templates, and data definitions; supported regular updates.</li>
+          <li><strong>Data extraction support:</strong> wrote SQL queries for eMPF-related requests; joined tables and created consolidated views.</li>
+          <li><strong>Quality & controls:</strong> performed completeness checks (production vs backup), cleansing follow-ups, and sanity validation.</li>
+          <li><strong>Efficiency improvements:</strong> built trackers to visualize team status (work-from-home / tasks) to reduce time spent on status checks.</li>
+          <li><strong>Automation milestone:</strong> developed Python automation for weekly MI report generation to reduce manual effort and turnaround time.</li>
+        </ul>
+      </div>
+
+      <div id="projects" class="card">
+        <h2>Key Projects / Deliverables</h2>
+        <ul>
+          <li><strong>eMPF extraction requests (SQL):</strong> designed query logic based on request intent; validated outputs and delivery readiness.</li>
+          <li><strong>BAU MI reporting pack:</strong> maintained recurring daily/weekly/monthly MI reports using Excel/PowerPoint.</li>
+          <li><strong>Weekly MI automation (Python):</strong> automated repeated steps (refresh, transform, compile) to shorten total cycle time.</li>
+          <li><strong>Operational trackers:</strong> created a more visual status view to improve team coordination and reduce repeated follow-ups.</li>
+          <li><strong>Peer review:</strong> reviewed teammates’ SQL queries for correctness, join logic, and potential duplication risks.</li>
+        </ul>
+      </div>
+
+      <div id="tools" class="card">
+        <h2>Tools & Data</h2>
+        <ul>
+          <li><strong>Tools:</strong> Excel, PowerPoint, Outlook, Microsoft Teams, JIRA, AS/400 environment for query & extraction workflows.</li>
+          <li><strong>Data examples (high-level):</strong> employer/member information, purchase records, product and price data.</li>
+          <li><strong>Typical methods:</strong> cleansing and value checks, joining tables into new views, completeness checking across environments, peer review for query correctness.</li>
+        </ul>
+      </div>
+
+      <div class="two">
+        <div class="card">
+          <h2>Challenges & How I Handled Them</h2>
+          <ul>
+            <li><strong>Urgent tasks:</strong> re-prioritized quickly and supported overtime when necessary to meet deadlines.</li>
+            <li><strong>Unclear requirements:</strong> clarified via iterative communication (Teams/Email) and confirmed assumptions before execution.</li>
+            <li><strong>Running-time dependency:</strong> worked in parallel while waiting for long queries/programs to finish to maximize throughput.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Key Learnings</h2>
+          <ul>
+            <li><strong>Multitasking & prioritization:</strong> handling multiple BAU + project tasks with timeboxing and parallel work.</li>
+            <li><strong>Stakeholder communication:</strong> translating business needs into data logic and validating outputs early.</li>
+            <li><strong>Data governance mindset:</strong> quality checks, completeness verification, and peer review to reduce operational risk.</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div id="reflection" class="card">
+        <h2>Detailed Reflection (Talking Points)</h2>
+        <p>
+          This section is intentionally longer so you can use it as your speaking outline for an 8–10 minute presentation.
+          Keep examples general and avoid sharing confidential information.
+        </p>
+        <ul>
+          <li><strong>What changed from school to workplace:</strong> requirements can be incomplete or evolving, so confirmation and iteration become essential.</li>
+          <li><strong>How I approached unclear requirements:</strong> asked clarifying questions, summarized assumptions back to stakeholders, and validated early outputs.</li>
+          <li><strong>How I handled urgent work:</strong> re-prioritized quickly; worked in parallel while waiting for queries/programs to run.</li>
+          <li><strong>Quality mindset:</strong> applied completeness checks, sanity validation, cleansing follow-ups, and peer review to reduce downstream risk.</li>
+          <li><strong>Professional growth:</strong> improved communication, prioritization, and confidence in delivering consistent BAU outputs.</li>
+          <li><strong>What I would do next:</strong> deepen visualization skills (e.g., Power BI/Tableau if available) and continue improving automation and documentation.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>About Me (Quick Summary)</h2>
+        <p>
+          I enjoy turning complex business questions into actionable data outputs. During the internship, I strengthened my data management fundamentals
+          (quality, completeness, validation) and delivered automation that improved team efficiency.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      Note: This page is a student internship summary and avoids confidential details.
+    </footer>
+  </div>
+</body>
+</html>
